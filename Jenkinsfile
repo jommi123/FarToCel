@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ADirin/FarToCel_Fall2024.git'
+                git branch: 'master', url: 'https://github.com/jommi123/FarToCel.git'
             }
         }
         stage('Build') {
