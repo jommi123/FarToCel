@@ -22,7 +22,7 @@ pipeline {
             post {
                 success {
                     // Publish JUnit test results
-                    junit '**/target/surefire-reports/TEST-*.xml'
+                    junit '**/target/surefire-reports/TEST-*.xml', skipPublishingChecks: true
                     // Generate JaCoCo code coverage report
                     jacoco(execPattern: '**/target/jacoco.exec')
                 }
