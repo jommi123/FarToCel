@@ -40,7 +40,7 @@ jobs:
             git push
           fi
         env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} // c
 
 
       - name: Upload JaCoCo coverage report
