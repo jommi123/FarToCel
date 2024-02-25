@@ -21,7 +21,7 @@ pipeline {
            }
             post {
                 success {
-                    // Publish JUnit test results
+                    // Publish JUnit test results.
                     junit testResults: '**/target/surefire-reports/TEST-*.xml'
                     // Generate JaCoCo code coverage report
                     jacoco(execPattern: '**/target/jacoco.exec')
