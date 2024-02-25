@@ -20,12 +20,6 @@
             <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins> <!-- JaCoCo Maven plugin for code coverage If you're trying to use JaCoCo for code coverage within your Maven project, you typically don't need to add it as a dependency directly in your project's POM file. Instead, you should configure it as a plugin for the Maven Surefire or Failsafe plugin. -->
