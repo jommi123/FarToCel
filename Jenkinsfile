@@ -13,6 +13,7 @@ pipeline {
                     description: "Build #${env.BUILD_NUMBER}",
                     context: "Jenkins CI"
                 )
+                }
             }
         }
         stage('Build') {
@@ -45,5 +46,4 @@ pipeline {
             }
         }
     }
-}
 }
