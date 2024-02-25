@@ -4,6 +4,10 @@ pipeline {
         PATH = "${env.PATH};C:\\Windows\\System32" // Update the PATH to include the directory of cmd.exe
     }
 
+    tools {
+        maven 'Maven 3.9.6'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,14 +15,20 @@ pipeline {
             }
         }
         stage('Build') {
-           steps {
-               bat 'mvn clean install'
-           }
+            steps {
+                script {
+                    def mavenHome = tool 'Maven'
+                    bat "${mavenHome}/bin/mvn clean install"
+                }
+            }
         }
         stage('Test') {
-           steps{
-               bat 'mvn test'
-           }
+            steps {
+                script {
+                    def mavenHome = tool 'Maven'
+                    bat "${mavenHome}/bin/mvn test"
+                }
+            }
             post {
                 success {
                     // Publish JUnit test results
