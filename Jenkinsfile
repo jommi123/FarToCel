@@ -10,3 +10,6 @@ pipeline {
             git branch: 'master', credentialsId: 'jommi123', url: 'https://github.com/jommi123/FarToCel.git'
         }
     }
+   }
+   }
+  
