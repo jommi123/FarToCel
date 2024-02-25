@@ -12,6 +12,7 @@ pipeline {
                     result: currentBuild.result,
                     description: "Build #${env.BUILD_NUMBER}",
                     context: "Jenkins CI"
+                )
             }
         }
         stage('Build') {
