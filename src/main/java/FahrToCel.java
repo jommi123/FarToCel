@@ -1,4 +1,7 @@
 public class FahrToCel {
+    public FahrToCel() {
+    }
+
     public static double fahrToCel(double fahr) {
         return (fahr - 32) * 5 / 9;
     }
