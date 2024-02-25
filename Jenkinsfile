@@ -4,28 +4,21 @@ pipeline {
         PATH = "${env.PATH};C:\\Windows\\System32" // Update the PATH to include the directory of cmd.exe
     }
 
-   tools {
-        maven 'Maven3.9.6'
-    }
-
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                script {
-                    def mvnHome = tool name: 'Maven', type: 'maven'
-                    def mvnCmd = "${mvnHome}/bin/mvn"
-
-                    sh "${mvnCmd} clean install"
-                }
+                git branch: 'master', url: 'https://github.com/jommi123/FarToCel.git'
             }
         }
+        stage('Build') {
+           steps {
+               bat 'mvn clean install'
+           }
+        }
         stage('Test') {
-            steps {
-                script {
-                    def mavenHome = tool 'Maven'
-                    bat "${mavenHome}/bin/mvn test"
-                }
-            }
+           steps{
+               bat 'mvn test'
+           }
             post {
                 success {
                     // Publish JUnit test results
