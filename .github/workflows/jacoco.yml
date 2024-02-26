@@ -39,8 +39,3 @@ jobs:
         with:
           name: jacoco-report
           path: '**/target/site/jacoco'
-
-      - name: Log coverage percentages to workflow output
-        run: |
-          echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
-          echo "branches = ${{ steps.jacoco.outputs.branches }}"
