@@ -17,4 +17,11 @@ public class FahrToCel {
     public static double kelvinToFahr(double kelvin) {
         return ((kelvin-273.15) * ((double)9/5) + 32);
     }
+
+    public static void main(String[] args) {
+        System.out.println("Fahrenheit to Celsius: " + fahrToCel(50));
+        System.out.println("Celsius to Fahrenheit: " + celToFahr(10));
+        System.out.println("Kelvin to Celsius: " + kelvinToCel(273.15));
+        System.out.println("Kelvin to Fahrenheit: " + kelvinToFahr(65));
+    }
 }

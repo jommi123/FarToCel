@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -22,6 +22,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>fahrtocel</finalName>
         <plugins> <!-- JaCoCo Maven plugin for code coverage If you're trying to use JaCoCo for code coverage within your Maven project, you typically don't need to add it as a dependency directly in your project's POM file. Instead, you should configure it as a plugin for the Maven Surefire or Failsafe plugin. -->
             <plugin>
             <groupId>org.jacoco</groupId>
@@ -49,6 +50,18 @@
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>FahrToCel</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
