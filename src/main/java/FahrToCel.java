@@ -13,4 +13,8 @@ public class FahrToCel {
     public static double kelvinToCel(double kelvin) {
         return kelvin - 273.15;
     }
+
+    public static double kelvinToFahr(double kelvin) {
+        return ((kelvin-273.15) * ((double)9/5) + 32);
+    }
 }

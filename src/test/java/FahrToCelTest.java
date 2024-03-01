@@ -24,4 +24,11 @@ class FahrToCelTest {
         assertEquals(0, converter.kelvinToCel(273.15));
         assertEquals(-273.15, converter.kelvinToCel(0));
     }
+
+    @Test
+    void kelvinToFahr() {
+        assertEquals(32, converter.kelvinToFahr(273.15), 0.1);
+        assertEquals(-459.67, converter.kelvinToFahr(0), 0.1);
+        assertEquals(80.51, converter.kelvinToFahr(300.1), 0.1);
+    }
 }
